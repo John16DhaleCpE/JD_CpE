@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const phrases = [
   'Aspiring Web Developer',
@@ -287,12 +288,12 @@ web development. AI-assisted development workflows.`}
             animation: 'pulse-glow 4s ease-in-out infinite',
           }}
         >
-          <img
-            src="/togalolol.jpg"
+          <Image
+            src="/Togalolol.jpg"
             alt="John Dhale Peralta — Computer Engineer"
+            fill
+            sizes="370px"
             style={{
-              width: '100%',
-              height: '100%',
               objectFit: 'cover',
               objectPosition: 'top center',
               filter: 'grayscale(20%) contrast(1.05)',
@@ -305,6 +306,10 @@ web development. AI-assisted development workflows.`}
             onMouseLeave={(e) => {
               e.currentTarget.style.filter = 'grayscale(20%) contrast(1.05)'
               e.currentTarget.style.transform = 'scale(1)'
+            }}
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement
+              target.style.display = 'none'
             }}
           />
         </div>
