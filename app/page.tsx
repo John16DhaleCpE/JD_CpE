@@ -1,21 +1,20 @@
 'use client'
 
-import Navbar from './components/navbar'
-import Hero from './components/hero'
-import About from './components/about'
-import Skills from './components/skills'
-import Projects from './components/projects'
-import Journey from './components/journey'
-import BeyondTech from './components/beyondtech'
-import Contact from './components/contact'
-import Footer from './components/footer'
-import Particles from './components/Particles'
-import { useTheme } from './context/ThemeContext'
+import Navbar from '@/components/navbar'
+import Hero from '@/components/hero'
+import About from '@/components/about'
+import Skills from '@/components/skills'
+import Projects from '@/components/projects'
+import Journey from '@/components/journey'
+import BeyondTech from '@/components/beyondtech'
+import Contact from '@/components/contact'
+import Footer from '@/components/footer'
+import Particles from '../components/Particles'
+import { useTheme } from '../context/ThemeContext'
 
 const Divider = () => (
   <div className="gradient-divider" />
 )
-
 export default function Home() {
   const { theme } = useTheme()
   const isDark = theme === 'dark'

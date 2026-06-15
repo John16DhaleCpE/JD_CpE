@@ -7,7 +7,7 @@ const highlights = [
   { label: '// focus', value: 'Web Development · AI-Assisted Workflows' },
   { label: '// approach', value: 'Project-based learner · Self-taught' },
   { label: '// values', value: 'Perseverance · Responsibility · Faith' },
-  { label: '// hobbies', value: 'Guitar · Gym · Old-school gaming' },
+  { label: '// hobbies', value: 'Guitar · Old-school gaming' },
 ]
 
 export default function About() {
@@ -81,7 +81,7 @@ export default function About() {
           <p>
             Outside the screen, you&apos;ll find me with a{' '}
             <span style={{ color: 'var(--accent)', fontWeight: 600 }}>guitar</span> in hand,
-            hitting the gym, or replaying classic games. I believe{' '}
+            or replaying classic games. I believe{' '}
             <span style={{ color: 'var(--secondary)', fontWeight: 600 }}>creativity
             fuels</span> better code.
           </p>

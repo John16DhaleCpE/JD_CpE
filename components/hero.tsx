@@ -331,7 +331,7 @@ web development. AI-assisted development workflows.`}
             animation: 'float 3s ease-in-out infinite',
           }}
         >
-          {'// photo.png'}
+          {'// dev.png'}
         </div>
       </div>
     </section>

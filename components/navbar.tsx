@@ -15,7 +15,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [active, setActive] = useState('#hero')
+  const [active, setActive] = useState('hero')
   const { theme, toggle } = useTheme()
   const [toggleHover, setToggleHover] = useState(false)
 

@@ -6,7 +6,6 @@ import { Renderer, Camera, Geometry, Program, Mesh } from 'ogl'
 import './Particles.css'
 
 const defaultColors = ['#ffffff', '#ffffff', '#ffffff']
-const lightModeColors = ['#c8c8c0', '#b8b8b0', '#a8a8a0']
 
 const hexToRgb = (hex: string): [number, number, number] => {
   hex = hex.replace(/^#/, '')
@@ -281,6 +280,7 @@ const Particles = ({
     particleCount,
     particleSpread,
     speed,
+    particleColors,
     moveParticlesOnHover,
     particleHoverFactor,
     alphaParticles,

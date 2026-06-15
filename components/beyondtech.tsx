@@ -1,11 +1,11 @@
 'use client'
 
 import { useScrollFade } from '../hooks/useScrollFade'
+import InteractiveGuitar from './InteractiveGuitar'
 
 const musicTags = [
   'Guitar',
   'Music Ministry',
-  'Gym',
   'Retro Gaming',
   'Faith-driven',
   'Lifelong Learning',
@@ -106,6 +106,9 @@ export default function BeyondTech() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '1.5rem',
+            justifySelf: 'center',
+            width: '100%',
+            maxWidth: 200,
           }}
         >
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, height: 48 }}>
@@ -114,29 +117,7 @@ export default function BeyondTech() {
             ))}
           </div>
 
-          <svg
-            width="80"
-            height="140"
-            viewBox="0 0 80 140"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ opacity: 0.7 }}
-            aria-hidden="true"
-          >
-            <line x1="40" y1="0" x2="40" y2="45" stroke="var(--accent)" strokeWidth="2" />
-            <rect x="34" y="5" width="12" height="8" rx="2" fill="none" stroke="var(--accent)" strokeWidth="1.5" />
-            <line x1="36" y1="9" x2="36" y2="15" stroke="var(--muted)" strokeWidth="0.8" />
-            <line x1="40" y1="9" x2="40" y2="15" stroke="var(--muted)" strokeWidth="0.8" />
-            <line x1="44" y1="9" x2="44" y2="15" stroke="var(--muted)" strokeWidth="0.8" />
-            <line x1="30" y1="45" x2="50" y2="45" stroke="var(--accent)" strokeWidth="1.5" />
-            <ellipse cx="40" cy="95" rx="22" ry="30" fill="none" stroke="var(--accent)" strokeWidth="1.5" />
-            <ellipse cx="40" cy="95" rx="14" ry="20" fill="none" stroke="var(--border)" strokeWidth="1" />
-            <circle cx="40" cy="95" r="5" fill="none" stroke="var(--muted)" strokeWidth="1" />
-            <line x1="36" y1="55" x2="36" y2="125" stroke="var(--muted)" strokeWidth="0.6" opacity="0.6" />
-            <line x1="38.5" y1="53" x2="38.5" y2="127" stroke="var(--muted)" strokeWidth="0.6" opacity="0.6" />
-            <line x1="41.5" y1="53" x2="41.5" y2="127" stroke="var(--muted)" strokeWidth="0.6" opacity="0.6" />
-            <line x1="44" y1="55" x2="44" y2="125" stroke="var(--muted)" strokeWidth="0.6" opacity="0.6" />
-          </svg>
+          <InteractiveGuitar />
 
           <div
             className="font-mono"
