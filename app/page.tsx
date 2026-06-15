@@ -46,6 +46,7 @@ export default function Home() {
       {/* Content */}
       <div style={{ position: 'relative', zIndex: 1 }}>
         <Navbar />
+        <div className="navbar-spacer" />
         <main>
           <Hero />
           <Divider />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useScrollFade } from '../hooks/useScrollFade'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 const projects = [
   {
@@ -142,13 +143,14 @@ function ProjectCard({
 
 export default function Projects() {
   const ref = useScrollFade()
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <section
       id="projects"
       ref={ref}
       className="scroll-fade"
-      style={{ padding: '6rem 2rem', maxWidth: 1100, margin: '0 auto', position: 'relative' }}
+      style={{ padding: isMobile ? '4rem 1.5rem' : '6rem 2rem', maxWidth: 1100, margin: '0 auto', position: 'relative' }}
     >
       {/* Scattered code textures */}
       <span className="code-texture" style={{ top: 30, left: 30, color: 'var(--accent)', opacity: 0.04, transform: 'rotate(-1.5deg)' }}>
@@ -192,12 +194,12 @@ export default function Projects() {
         style={{
           background: 'var(--surface)',
           border: '1px solid var(--accent)',
-          padding: '2.5rem',
+          padding: isMobile ? '1.5rem' : '2.5rem',
           borderRadius: 4,
           display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: '2rem',
-          alignItems: 'start',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr auto',
+          gap: isMobile ? '1rem' : '2rem',
+          alignItems: isMobile ? 'center' : 'start',
           marginBottom: '3rem',
         }}
       >
@@ -260,9 +262,10 @@ export default function Projects() {
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-end',
+            flexDirection: isMobile ? 'row' : 'column',
+            alignItems: isMobile ? 'center' : 'flex-end',
             gap: '0.75rem',
+            flexWrap: 'wrap',
           }}
         >
           <Badge

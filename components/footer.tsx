@@ -26,7 +26,7 @@ export default function Footer() {
         >
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, lineHeight: 1 }}>
             <span
-              className="font-mono"
+              className="font-mono footer-logo-jd"
               style={{
                 fontSize: 58,
                 fontWeight: 800,
@@ -38,7 +38,7 @@ export default function Footer() {
               JD
             </span>
             <span
-              className="font-mono"
+              className="font-mono footer-logo-cpe"
               style={{
                 fontSize: 34,
                 fontWeight: 500,
@@ -51,7 +51,7 @@ export default function Footer() {
             </span>
           </div>
           <div
-            className="font-mono"
+            className="font-mono hide-mobile"
             style={{
               fontSize: 9,
               letterSpacing: 2,

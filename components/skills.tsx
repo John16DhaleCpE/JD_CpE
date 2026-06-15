@@ -1,6 +1,7 @@
 'use client'
 
 import { useScrollFade } from '../hooks/useScrollFade'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 interface Skill {
   name: string
@@ -233,13 +234,14 @@ function SkillCard({ skill, color }: { skill: Skill; color: string }) {
 
 export default function Skills() {
   const ref = useScrollFade()
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <section
       id="skills"
       ref={ref}
       className="scroll-fade"
-      style={{ padding: '6rem 2rem', maxWidth: 1100, margin: '0 auto', position: 'relative' }}
+      style={{ padding: isMobile ? '4rem 1.5rem' : '6rem 2rem', maxWidth: 1100, margin: '0 auto', position: 'relative' }}
     >
       {/* Scattered code textures */}
       <span className="code-texture" style={{ top: 40, right: 20, color: 'var(--accent)', opacity: 0.04, transform: 'rotate(-2deg)' }}>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useScrollFade } from '../hooks/useScrollFade'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 const highlights = [
   { label: '// status', value: 'CpE Graduate · Open to Opportunities' },
@@ -12,13 +13,14 @@ const highlights = [
 
 export default function About() {
   const ref = useScrollFade()
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <section
       id="about"
       ref={ref}
       className="scroll-fade"
-      style={{ padding: '6rem 2rem', maxWidth: 1100, margin: '0 auto' }}
+      style={{ padding: isMobile ? '4rem 1.5rem' : '6rem 2rem', maxWidth: 1100, margin: '0 auto' }}
     >
       <div className="section-label-wrap">
         <div

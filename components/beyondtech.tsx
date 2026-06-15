@@ -1,6 +1,7 @@
 'use client'
 
 import { useScrollFade } from '../hooks/useScrollFade'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 import InteractiveGuitar from './InteractiveGuitar'
 
 const musicTags = [
@@ -13,13 +14,14 @@ const musicTags = [
 
 export default function BeyondTech() {
   const ref = useScrollFade()
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <section
       id="beyond"
       ref={ref}
       className="scroll-fade"
-      style={{ padding: '6rem 2rem', maxWidth: 1100, margin: '0 auto' }}
+      style={{ padding: isMobile ? '4rem 1.5rem' : '6rem 2rem', maxWidth: 1100, margin: '0 auto' }}
     >
       <div className="section-label-wrap">
         <div
@@ -40,11 +42,11 @@ export default function BeyondTech() {
         style={{
           background: 'var(--surface)',
           border: '1px solid var(--border)',
-          padding: '3rem',
+          padding: isMobile ? '1.5rem' : '3rem',
           borderRadius: 4,
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '4rem',
+          gap: isMobile ? '2rem' : '4rem',
           alignItems: 'center',
         }}
       >

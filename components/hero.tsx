@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 const phrases = [
   'Aspiring Web Developer',
@@ -17,6 +18,7 @@ export default function Hero() {
   const [charIndex, setCharIndex] = useState(0)
   const [deleting, setDeleting] = useState(false)
   const [dotHover, setDotHover] = useState(false)
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   useEffect(() => {
     const current = phrases[phraseIndex]
@@ -49,15 +51,23 @@ export default function Hero() {
     return () => clearTimeout(timeout)
   }, [charIndex, deleting, phraseIndex])
 
+  const photoSize = isMobile ? 240 : 370
+  const ringOuter = isMobile ? 280 : 450
+  const ringMid = isMobile ? 265 : 430
+  const ringSpin1 = isMobile ? 270 : 440
+  const ringSpin2 = isMobile ? 255 : 420
+  const ringGlow = isMobile ? 225 : 370
+
   return (
     <section
       id="hero"
       style={{
-        minHeight: '95vh',
+        minHeight: isMobile ? 'auto' : '95vh',
         display: 'flex',
-        alignItems: 'center',
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: isMobile ? 'center' : 'center',
         position: 'relative',
-        padding: '4rem 2rem',
+        padding: isMobile ? '2rem 1rem' : '4rem 2rem',
         maxWidth: 1200,
         margin: '0 auto',
       }}
@@ -74,13 +84,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Name — BIG */}
+        {/* Name */}
         <h1
           className="animate-fadeUp-2"
           style={{
-            fontSize: 'clamp(3.5rem, 8vw, 6.5rem)',
+            fontSize: isMobile ? 'clamp(2.25rem, 10vw, 3.5rem)' : 'clamp(3.5rem, 8vw, 6.5rem)',
             fontWeight: 800,
-            letterSpacing: -2,
+            letterSpacing: isMobile ? -1 : -2,
             lineHeight: 1.0,
             color: 'var(--accent)',
             marginBottom: '0.5rem',
@@ -109,9 +119,9 @@ export default function Hero() {
         <div
           className="animate-fadeUp-3 font-mono"
           style={{
-            fontSize: 'clamp(0.8rem, 2vw, 1.1rem)',
+            fontSize: 'clamp(0.75rem, 2vw, 1.1rem)',
             color: 'var(--text-secondary)',
-            marginBottom: '1.5rem',
+            marginBottom: isMobile ? '1rem' : '1.5rem',
             minHeight: '1.4em',
           }}
         >
@@ -123,15 +133,15 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Bio — compact */}
+        {/* Bio */}
         <p
           className="animate-fadeUp-4 font-mono"
           style={{
             maxWidth: 560,
-            fontSize: '0.9rem',
+            fontSize: isMobile ? '0.82rem' : '0.9rem',
             lineHeight: 1.8,
             color: 'var(--text-secondary)',
-            marginBottom: '2.5rem',
+            marginBottom: isMobile ? '1.5rem' : '2.5rem',
             whiteSpace: 'pre-line',
           }}
         >
@@ -148,7 +158,7 @@ web development. AI-assisted development workflows.`}
         {/* CTA */}
         <div
           className="animate-fadeUp-5"
-          style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
+          style={{ display: 'flex', justifyContent: isMobile ? 'center' : 'flex-start', gap: isMobile ? '0.6rem' : '1rem', flexWrap: 'wrap' }}
         >
           <a
             href="#projects"
@@ -157,7 +167,7 @@ web development. AI-assisted development workflows.`}
               fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
-              padding: '12px 28px',
+              padding: isMobile ? '10px 20px' : '12px 28px',
               borderRadius: 2,
               background: 'var(--accent)',
               color: '#000',
@@ -182,7 +192,7 @@ web development. AI-assisted development workflows.`}
               fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
-              padding: '12px 28px',
+              padding: isMobile ? '10px 20px' : '12px 28px',
               borderRadius: 2,
               border: '1px solid var(--border)',
               color: 'var(--text-secondary)',
@@ -202,12 +212,13 @@ web development. AI-assisted development workflows.`}
         </div>
       </div>
 
-      {/* Right: photo with creative frame — BIGGER */}
+      {/* Right: photo with creative frame */}
       <div
         className="animate-fadeUp-3"
         style={{
           flexShrink: 0,
-          marginLeft: 'clamp(1.5rem, 4vw, 5rem)',
+          marginLeft: isMobile ? 0 : 'clamp(1.5rem, 4vw, 5rem)',
+          marginTop: isMobile ? '2.5rem' : 0,
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
@@ -218,8 +229,8 @@ web development. AI-assisted development workflows.`}
         <div
           style={{
             position: 'absolute',
-            width: 430,
-            height: 430,
+            width: ringOuter,
+            height: ringOuter,
             borderRadius: '50%',
             border: '1px solid var(--accent-border)',
             opacity: 0.2,
@@ -229,8 +240,8 @@ web development. AI-assisted development workflows.`}
         <div
           style={{
             position: 'absolute',
-            width: 450,
-            height: 450,
+            width: ringMid,
+            height: ringMid,
             borderRadius: '50%',
             border: '1px solid var(--secondary-border)',
             opacity: 0.15,
@@ -240,8 +251,8 @@ web development. AI-assisted development workflows.`}
         <div
           style={{
             position: 'absolute',
-            width: 440,
-            height: 440,
+            width: ringSpin1,
+            height: ringSpin1,
             borderRadius: '50%',
             border: '2px solid transparent',
             borderTopColor: 'var(--accent)',
@@ -254,8 +265,8 @@ web development. AI-assisted development workflows.`}
         <div
           style={{
             position: 'absolute',
-            width: 420,
-            height: 420,
+            width: ringSpin2,
+            height: ringSpin2,
             borderRadius: '50%',
             border: '2px solid transparent',
             borderBottomColor: 'var(--secondary)',
@@ -268,8 +279,8 @@ web development. AI-assisted development workflows.`}
         <div
           style={{
             position: 'absolute',
-            width: 370,
-            height: 370,
+            width: ringGlow,
+            height: ringGlow,
             borderRadius: '50%',
             background: 'radial-gradient(circle, var(--accent-dim) 0%, transparent 70%)',
             filter: 'blur(30px)',
@@ -278,8 +289,8 @@ web development. AI-assisted development workflows.`}
         {/* Photo container */}
         <div
           style={{
-            width: 370,
-            height: 370,
+            width: photoSize,
+            height: photoSize,
             borderRadius: '50%',
             overflow: 'hidden',
             border: '2px solid var(--accent-border)',
@@ -292,7 +303,7 @@ web development. AI-assisted development workflows.`}
             src="/Togalolol.jpg"
             alt="John Dhale Peralta — Computer Engineer"
             fill
-            sizes="370px"
+            sizes={isMobile ? '240px' : '370px'}
             style={{
               objectFit: 'cover',
               objectPosition: 'top center',
@@ -314,13 +325,17 @@ web development. AI-assisted development workflows.`}
           />
         </div>
         {/* Corner brackets */}
-        <div style={{ position: 'absolute', top: 10, left: 10, width: 24, height: 24, borderTop: '2px solid var(--accent)', borderLeft: '2px solid var(--accent)', opacity: 0.4 }} />
-        <div style={{ position: 'absolute', top: 10, right: 10, width: 24, height: 24, borderTop: '2px solid var(--secondary)', borderRight: '2px solid var(--secondary)', opacity: 0.3 }} />
-        <div style={{ position: 'absolute', bottom: 10, left: 10, width: 24, height: 24, borderBottom: '2px solid var(--secondary)', borderLeft: '2px solid var(--secondary)', opacity: 0.3 }} />
-        <div style={{ position: 'absolute', bottom: 10, right: 10, width: 24, height: 24, borderBottom: '2px solid var(--accent)', borderRight: '2px solid var(--accent)', opacity: 0.4 }} />
+        {!isMobile && (
+          <>
+            <div style={{ position: 'absolute', top: 10, left: 10, width: 24, height: 24, borderTop: '2px solid var(--accent)', borderLeft: '2px solid var(--accent)', opacity: 0.4 }} />
+            <div style={{ position: 'absolute', top: 10, right: 10, width: 24, height: 24, borderTop: '2px solid var(--secondary)', borderRight: '2px solid var(--secondary)', opacity: 0.3 }} />
+            <div style={{ position: 'absolute', bottom: 10, left: 10, width: 24, height: 24, borderBottom: '2px solid var(--secondary)', borderLeft: '2px solid var(--secondary)', opacity: 0.3 }} />
+            <div style={{ position: 'absolute', bottom: 10, right: 10, width: 24, height: 24, borderBottom: '2px solid var(--accent)', borderRight: '2px solid var(--accent)', opacity: 0.4 }} />
+          </>
+        )}
         {/* Floating label */}
         <div
-          className="font-mono"
+          className="font-mono hide-mobile"
           style={{
             position: 'absolute',
             bottom: -32,

@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import { useScrollFade } from '../hooks/useScrollFade'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || ''
 
@@ -213,6 +214,8 @@ function TextareaField({
 
 export default function Contact() {
   const ref = useScrollFade()
+  const isMobile = useMediaQuery('(max-width: 768px)')
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -289,7 +292,7 @@ export default function Contact() {
       id="contact"
       ref={ref}
       className="scroll-fade"
-      style={{ padding: '6rem 2rem', maxWidth: 1100, margin: '0 auto' }}
+      style={{ padding: isMobile ? '4rem 1.5rem' : '6rem 2rem', maxWidth: 1100, margin: '0 auto' }}
     >
       <div className="section-label-wrap">
         <div
@@ -310,8 +313,8 @@ export default function Contact() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '3rem',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+          gap: isMobile ? '2rem' : '3rem',
           alignItems: 'start',
         }}
       >
