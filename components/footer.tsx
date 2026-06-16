@@ -2,7 +2,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        borderTop: '1px solid var(--border)',
+        borderTop: 'none',
+        boxShadow: '0 -1px 0 rgba(34, 211, 238, 0.15)',
         padding: '3rem 2rem 2rem',
         color: 'var(--text-secondary)',
       }}
@@ -24,15 +25,15 @@ export default function Footer() {
             marginBottom: '2rem',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, lineHeight: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, lineHeight: 1, borderLeft: '2px solid rgba(34, 211, 238, 0.4)', paddingLeft: 12 }}>
             <span
               className="font-mono footer-logo-jd"
               style={{
                 fontSize: 58,
-                fontWeight: 800,
+                fontWeight: 700,
                 letterSpacing: 3,
-                color: 'var(--muted)',
-                opacity: 0.15,
+                color: '#e5e5e5',
+                opacity: 1,
               }}
             >
               JD
@@ -41,10 +42,10 @@ export default function Footer() {
               className="font-mono footer-logo-cpe"
               style={{
                 fontSize: 34,
-                fontWeight: 500,
+                fontWeight: 400,
                 letterSpacing: 2,
-                color: 'var(--muted)',
-                opacity: 0.12,
+                color: 'var(--accent)',
+                opacity: 0.7,
               }}
             >
               CpE
@@ -56,11 +57,11 @@ export default function Footer() {
               fontSize: 9,
               letterSpacing: 2,
               color: 'var(--muted)',
-              opacity: 0.35,
+              opacity: 0.5,
               textTransform: 'uppercase',
             }}
           >
-            {'// systems engineer · web developer'}
+            <span style={{ color: 'var(--accent)', opacity: 1 }}>{'//'}</span> SYSTEMS ENGINEER · WEB DEVELOPER
           </div>
         </div>
 
@@ -68,8 +69,7 @@ export default function Footer() {
         <div
           style={{
             height: 1,
-            background:
-              'linear-gradient(90deg, var(--accent-border) 0%, var(--border) 40%, transparent 100%)',
+            background: 'linear-gradient(to right, transparent, rgba(34, 211, 238, 0.4), transparent)',
             marginBottom: '1.5rem',
           }}
         />
@@ -93,7 +93,7 @@ export default function Footer() {
               opacity: 0.7,
             }}
           >
-            © 2026 ~ John Dhale Peralta
+            © <span style={{ color: '#fbbf24', opacity: 0.6 }}>2026</span> · <span style={{ color: '#d1d5db' }}>John Dhale Peralta</span>
           </div>
           <div
             className="font-mono"
@@ -106,11 +106,11 @@ export default function Footer() {
               gap: '0.4rem',
             }}
           >
-            <span style={{ opacity: 0.5 }}>Built with</span>
+            <span style={{ color: '#6b7280' }}>Built with</span>
             <span
               style={{
                 color: 'var(--accent)',
-                fontWeight: 700,
+                fontWeight: 600,
                 opacity: 0.7,
                 textShadow: '0 0 8px var(--accent-dim)',
               }}
@@ -118,7 +118,7 @@ export default function Footer() {
               discipline
             </span>
             <span style={{ opacity: 0.3, margin: '0 0.15rem' }}>·</span>
-            <span style={{ opacity: 0.45 }}>Teresa, Rizal</span>
+            <span style={{ color: '#9ca3af' }}>Teresa, Rizal</span>
           </div>
         </div>
       </div>

@@ -366,7 +366,7 @@ export default function Contact() {
               <a
                 key={s.label}
                 href={s.href}
-                target={s.href.startsWith('http') ? '_blank' : undefined}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="card-hover"
                 style={{

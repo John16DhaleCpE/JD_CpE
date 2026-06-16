@@ -19,9 +19,17 @@ const projects = [
     dashed: false,
   },
   {
-    num: '04 // coming soon',
+    num: '04 // web application',
+    name: 'Calculator Noir',
+    desc: 'A dark-themed, cinematic calculator with a noir aesthetic. Features responsive arithmetic operations, calculation history tracking, and a sleek UI — blending design sensibility with functional web development.',
+    tags: ['Next.js', 'TypeScript', 'React', 'UI/UX'],
+    dashed: false,
+    href: 'https://next-calc-john-dhale.vercel.app/',
+  },
+  {
+    num: '05 // coming soon',
     name: 'Web Projects',
-    desc: 'Portfolio site, task manager, IoT dashboard, and more in active development. Combining CpE hardware background with modern web tech for unique full-stack projects.',
+    desc: 'Task manager, IoT dashboard, and more in development. Combining CpE hardware background with modern web tech for unique full-stack projects.',
     tags: ['Next.js', 'TypeScript', 'React', 'In Progress'],
     dashed: true,
   },
@@ -63,12 +71,14 @@ function ProjectCard({
   desc,
   tags,
   dashed,
+  href,
 }: {
   num: string
   name: string
   desc: string
   tags: string[]
   dashed: boolean
+  href?: string
 }) {
   return (
     <div
@@ -137,6 +147,34 @@ function ProjectCard({
           </span>
         ))}
       </div>
+      {href && (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+            marginTop: '1.25rem',
+            fontSize: 10,
+            letterSpacing: 1.5,
+            textTransform: 'uppercase',
+            color: 'var(--accent)',
+            opacity: 0.7,
+            textDecoration: 'none',
+            transition: 'opacity 0.2s',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '1' }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.7' }}
+        >
+          Live Demo
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </a>
+      )}
     </div>
   )
 }

@@ -54,12 +54,12 @@ export default function Navbar() {
     <nav
       className={isMobile ? 'mobile-nav' : ''}
       style={{
-        position: isMobile ? 'fixed' : 'sticky',
+        position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 50,
-        background: isMobile ? 'var(--bg)' : scrolled ? 'var(--bg)' : 'transparent',
+        background: scrolled ? 'var(--bg)' : 'transparent',
         backdropFilter: 'blur(12px)',
         borderBottom: '1px solid var(--border)',
         transition: 'background 0.3s',
