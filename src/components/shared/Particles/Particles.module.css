@@ -1,0 +1,8 @@
+/* ── Particles Container ── */
+/* The OGL canvas is appended to this div */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

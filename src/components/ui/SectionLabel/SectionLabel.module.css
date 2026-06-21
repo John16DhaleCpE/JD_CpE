@@ -1,0 +1,36 @@
+/* ── Section Label ── */
+/* Used by every feature section to show the section number
+   and name (e.g., "01 // about", "02 // skills") */
+
+.wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* The "code texture" pseudo-element that gives a subtle
+   code-like background behind each section label */
+.wrap::before {
+  content: '01 const build = () => { return "systems"; } import React from export default function';
+  position: absolute;
+  top: -18px;
+  left: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--accent);
+  opacity: 0.06;
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,103 @@
+/* ── Navbar — static styles ── */
+/* Dynamic styles (scroll state, active link, theme)
+   are handled via inline styles in the component */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+}
+
+.innerMobile {
+  padding: 0 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.logoJd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.logoJdMobile {
+  font-size: 18px;
+}
+
+.logoCpe {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+.logoCpeMobile {
+  font-size: 12px;
+}
+
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navLink {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+/* Mobile menu */
+.mobileDropdown {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  padding: 0.5rem 0;
+  z-index: 49;
+}
+
+.mobileLink {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 2px solid transparent;
+}

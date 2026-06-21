@@ -1,0 +1,15 @@
+/* ── Gradient Divider ── */
+/* A subtle gradient line that separates sections */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border) 20%,
+    var(--accent-border) 50%,
+    var(--border) 80%,
+    transparent
+  );
+}

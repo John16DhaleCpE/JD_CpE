@@ -1,0 +1,12 @@
+/* ── Badge ── */
+/* Small tag/label used for skill tags and project badges */
+
+.badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 2px;
+  display: inline-block;
+  white-space: nowrap;
+}
