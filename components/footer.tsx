@@ -32,7 +32,7 @@ export default function Footer() {
                 fontSize: 58,
                 fontWeight: 700,
                 letterSpacing: 3,
-                color: '#e5e5e5',
+                color: 'var(--text)',
                 opacity: 1,
               }}
             >
@@ -93,7 +93,7 @@ export default function Footer() {
               opacity: 0.7,
             }}
           >
-            © <span style={{ color: '#fbbf24', opacity: 0.6 }}>2026</span> · <span style={{ color: '#d1d5db' }}>John Dhale Peralta</span>
+            © <span style={{ color: 'var(--secondary)', opacity: 0.6 }}>2026</span> · <span style={{ color: 'var(--text)' }}>John Dhale Peralta</span>
           </div>
           <div
             className="font-mono"
@@ -106,7 +106,7 @@ export default function Footer() {
               gap: '0.4rem',
             }}
           >
-            <span style={{ color: '#6b7280' }}>Built with</span>
+            <span style={{ color: 'var(--muted)' }}>Built with</span>
             <span
               style={{
                 color: 'var(--accent)',
@@ -118,7 +118,7 @@ export default function Footer() {
               discipline
             </span>
             <span style={{ opacity: 0.3, margin: '0 0.15rem' }}>·</span>
-            <span style={{ color: '#9ca3af' }}>Teresa, Rizal</span>
+            <span style={{ color: 'var(--muted)' }}>Teresa, Rizal</span>
           </div>
         </div>
       </div>

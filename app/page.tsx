@@ -1,5 +1,7 @@
 'use client'
 
+import { useMemo } from 'react'
+import dynamic from 'next/dynamic'
 import Navbar from '@/components/navbar'
 import Hero from '@/components/hero'
 import About from '@/components/about'
@@ -9,8 +11,9 @@ import Journey from '@/components/journey'
 import BeyondTech from '@/components/beyondtech'
 import Contact from '@/components/contact'
 import Footer from '@/components/footer'
-import Particles from '../components/Particles'
 import { useTheme } from '../context/ThemeContext'
+
+const Particles = dynamic(() => import('../components/Particles'), { ssr: false })
 
 const Divider = () => (
   <div className="gradient-divider" />
@@ -18,6 +21,11 @@ const Divider = () => (
 export default function Home() {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+
+  const particleColors = useMemo(
+    () => (isDark ? ['#52525b', '#27272a'] : ['#c8c8c0', '#b8b8b0']),
+    [isDark]
+  )
 
   return (
     <>
@@ -31,7 +39,7 @@ export default function Home() {
         }}
       >
         <Particles
-          particleColors={isDark ? ['#52525b', '#27272a'] : ['#c8c8c0', '#b8b8b0']}
+          particleColors={particleColors}
           particleCount={200}
           particleSpread={20}
           speed={0.08}
