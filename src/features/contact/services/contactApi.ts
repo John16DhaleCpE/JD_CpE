@@ -11,15 +11,9 @@
 
 import { FormData } from '../types'
 
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || ''
+const WEB3FORMS_KEY = '3ee54dc8-d646-46fd-8584-a816a46994ab'
 
 export async function submitForm(data: FormData): Promise<void> {
-  if (!WEB3FORMS_KEY) {
-    throw new Error(
-      'Web3Forms key not configured. Get one at https://web3forms.com and add it to .env.local'
-    )
-  }
-
   // Send data to Web3Forms (a form-to-email service)
   const res = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
