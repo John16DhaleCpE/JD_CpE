@@ -9,4 +9,5 @@ export interface Project {
   tags: string[]
   dashed: boolean
   href?: string
+  images?: string[]
 }

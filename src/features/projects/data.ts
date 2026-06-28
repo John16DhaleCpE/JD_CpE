@@ -30,9 +30,17 @@ export const projects: Project[] = [
     tags: ['Next.js', 'TypeScript', 'React', 'UI/UX'],
     dashed: false,
     href: 'https://next-calc-john-dhale.vercel.app/',
+    images: ['/calcu noir.jpg'],
   },
   {
-    num: '05 // coming soon',
+    num: '05 // flagship thesis',
+    name: 'Sheep Disease Diagnostic System',
+    desc: 'An academic capstone project applying machine learning techniques to assist in diagnosing sheep diseases. Built as a data-driven diagnostic tool combining research, problem-solving, and intelligent system design — demonstrating how engineering can drive real-world impact in agriculture.',
+    tags: ['Deep Learning', 'Disease Diagnosis', 'Data-Driven', 'Research', 'Python'],
+    dashed: false,
+  },
+  {
+    num: '06 // coming soon',
     name: 'Web Projects',
     desc: 'Task manager, IoT dashboard, and more in development. Combining CpE hardware background with modern web tech for unique full-stack projects.',
     tags: ['Next.js', 'TypeScript', 'React', 'In Progress'],
